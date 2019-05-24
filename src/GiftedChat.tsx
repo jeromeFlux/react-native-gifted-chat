@@ -421,11 +421,11 @@ class GiftedChat extends React.Component<GiftedChatProps, GiftedChatState> {
   }
 
   getKeyboardHeight() {
-    if (Platform.OS === 'android' && !this.props.forceGetKeyboardHeight) {
+    if (!this.props.forceGetKeyboardHeight) {
       // For android: on-screen keyboard resized main container and has own height.
       // @see https://developer.android.com/training/keyboard-input/visibility.html
       // So for calculate the messages container height ignore keyboard height.
-      return 0
+      return 80
     }
     return this._keyboardHeight
   }
